@@ -4,6 +4,7 @@
 \usepackage[french]{babel}
 \usepackage{blindtext}
 
+\usepackage{layout}
 \begin{document}
 \title{Mon premier doc \LaTeX héhé}
 \author{virgile\thanks{coucou1}\\Loria \and thomas\thanks{coucou2}\\ENSEM BOUH}% \and permet de séparer en colonnes
@@ -16,6 +17,9 @@
 \blindtext
 \end{abstract}
 
+\setcounter{tocdepth}{4} %profondeur de la table des matières
+\setcounter{secnumdepth}{3}%profondeur à laquelle on numérote
+\setcounter{page}{100}%ùodifie le numéro de page
 \tableofcontents
 \section{Introduction}
 
@@ -57,5 +61,23 @@
   \item[chien] boule de poils plus grosse \blindtext
 \end{description}
 
-
+\section{Environement non formaté}
+\begin{verbatim}
+  \begin{itemize}
+    \item chat
+    \begin{enumerate}
+      \item chat 1
+      \item chat 2
+      \item chat 3
+    \end{enumerate}
+    \item chien
+    \item singes
+    \begin{itemize}
+      \item babouin
+      \item chimpanzée
+    \end{itemize}
+  \end{itemize}
+\end{verbatim}
+\newpage
+\layout
 \end{document}
