@@ -1,13 +1,61 @@
 \documentclass[a4paper,12pt]{article}
+\usepackage[T1]{fontenc} %police
+\usepackage[utf8]{inputenc} % input encoding (permet les acents)
+\usepackage[french]{babel}
 \usepackage{blindtext}
 
 \begin{document}
-\title{Mon premier doc \LaTeX}
-\author{virgile}
+\title{Mon premier doc \LaTeX héhé}
+\author{virgile\thanks{coucou1}\\Loria \and thomas\thanks{coucou2}\\ENSEM BOUH}% \and permet de séparer en colonnes
 \date{\today}
 
+
 \maketitle
+
+\begin{abstract}
+\blindtext
+\end{abstract}
+
+\tableofcontents
+\section{Introduction}
+
+% \newenvironement{testEnv}{\bgroup}{\egroup}
+% \begin{testEnv}
+%   \blindtext
+% \end{testEnv}
+
+\subsection{subsection azeazsdqs}
+\blindtext \\
+\subsection{subsection wx:ck,ms}
 \blindtext \\
 
-\blindtext
+\newpage
+\section{Listes}
+\subsection{listes à puce}
+
+\renewcommand\labelitemi{X}
+% \renewcommand\labelitemii{\times}
+
+\begin{itemize}
+  \item chat
+  \begin{enumerate}
+    \item chat 1
+    \item chat 2
+    \item chat 3
+  \end{enumerate}
+  \item chien
+  \item singes
+  \begin{itemize}
+    \item babouin
+    \item chimpanzée
+  \end{itemize}
+\end{itemize}
+
+\subsection{environement description}
+\begin{description}
+  \item[chat] boule de poils
+  \item[chien] boule de poils plus grosse \blindtext
+\end{description}
+
+
 \end{document}
