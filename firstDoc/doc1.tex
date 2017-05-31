@@ -1,26 +1,66 @@
 \documentclass[a4paper,12pt]{article}
+
 \usepackage[T1]{fontenc} %police
 \usepackage[utf8]{inputenc} % input encoding (permet les acents)
 \usepackage[french]{babel}
-\usepackage{blindtext}
-
-\usepackage{layout}
+\usepackage{blindtext} %génération de Lorem Ipsum
+\usepackage[reals]{layout} % permet l'affichage du layout d'une page via \layout
+\usepackage{fancyhdr}%extended Headers and footers
 \begin{document}
 \title{Mon premier doc \LaTeX héhé}
 \author{virgile\thanks{coucou1}\\Loria \and thomas\thanks{coucou2}\\ENSEM BOUH}% \and permet de séparer en colonnes
 \date{\today}
 
-
 \maketitle
+\tableofcontents
+
+\newpage
+\section{Encoding and language selection}
+\subsection{Usepackage}
+\begin{verbatim}
+\usepackage[T1]{fontenc} % police selection
+\usepackage[utf8]{inputenc} % input encoding
+\usepackage[french]{babel} % Language selection
+\end{verbatim}
+\subsection{How to use it}
+Nothing special to do. Just use your choosed language as usual.
+\subsection{Results}
+é è ù à ô û ü... 
+\newpage
+\section{Abtract}
+\subsection{Usepackage}
+No needs for article class.
+\subsection{How to use it}
+\begin{verbatim}
+\begin{abstract}
+  Qu’est que c’est?. C’est une phrase français avant le lorem ipsum.
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam lobor-
+  tis facilisis sem. Nullam nec mi et neque pharetra sollicitudin. Praesent
+  imperdiet mi nec ante. Donec ullamcorper, felis non sodales commodo,
+  lectus velit ultrices augue, a dignissim nibh lectus placerat pede. Viva-
+  mus nunc nunc, molestie ut, ultricies vel, semper in, velit. Ut porttitor.
+  Praesent in sapien. Lorem ipsum dolor sit amet, consectetuer adipis-
+  cing elit. Duis fringilla tristique neque. Sed interdum libero ut metus.
+  Pellentesque placerat. Nam rutrum augue a leo. Morbi sed elit sit amet
+  ante lobortis sollicitudin. Praesent blandit blandit mauris. Praesent
+  lectus tellus, aliquet aliquam, luctus a, egestas a, turpis. Mauris la-
+  cinia lorem sit amet ipsum. Nunc quis urna dictum turpis accumsan
+  semper.
+\end{abstract}
+\end{verbatim}
+\subsection{Result}
 
 \begin{abstract}
 \blindtext
 \end{abstract}
 
-\setcounter{tocdepth}{4} %profondeur de la table des matières
-\setcounter{secnumdepth}{3}%profondeur à laquelle on numérote
-\setcounter{page}{100}%ùodifie le numéro de page
-\tableofcontents
+\newpage
+\section{Table of content}
+\subsection{Usepackage}
+No needs for article class.
+% \setcounter{tocdepth}{4} %profondeur de la table des matières
+% \setcounter{secnumdepth}{3}%profondeur à laquelle on numérote
+% \setcounter{page}{100}%ùodifie le numéro de page
 \section{Introduction}
 
 % \newenvironement{testEnv}{\bgroup}{\egroup}
@@ -61,6 +101,8 @@
   \item[chien] boule de poils plus grosse \blindtext
 \end{description}
 
+
+\newpage
 \section{Environement non formaté}
 \begin{verbatim}
   \begin{itemize}
@@ -78,6 +120,47 @@
     \end{itemize}
   \end{itemize}
 \end{verbatim}
+
 \newpage
+\section{Extended Headers and footers (fancyhdr)}
+\subsection{Usepackage}
+\begin{verbatim}
+\usepackage{fancyhdr} %extended Headers and footers
+\end{verbatim}
+
+\subsection{Simple example}
+This is how to create the simple example you can see on this page.
+\begin{verbatim}
+\pagestyle{fancy}
+\lhead{CoucouL}
+\chead{CoucouCenter}
+\rhead{CoucouR}
+\lfoot{}
+\cfoot{To: Dean A. Smith}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\end{verbatim}
+\pagestyle{fancy}
+\lhead{CoucouL}
+\chead{CoucouCenter}
+\rhead{CoucouR}
+\lfoot{}
+\cfoot{To: Dean A. Smith}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\subsection{Redefining plain style}
+\begin{verbatim}
+\fancypagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[C]{\textbf{\thepage}} % except the center
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+\end{verbatim}
+% \setlength\oddsidemargin{-5000000sp} décaler la marge
+\newpage
+\section{layout}
 \layout
 \end{document}
