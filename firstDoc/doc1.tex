@@ -280,7 +280,57 @@ No needs
   \end{minipage}
 \end{itemize}
 
-\subsection{Bold and italic}
+\subsection{Style}
+\subsubsection{Graisse et italique}
+\begin{itemize}
+  \renewcommand\labelitemi{}
+  \item
+  \begin{minipage}[t]{.46\linewidth}
+    \begin{verbatim}
+      \textbf{gras}
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+    \textbf{gras}
+  \end{minipage}
+  \item
+  \begin{minipage}[t]{.46\linewidth}
+    \begin{verbatim}
+      \textit{italique}
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+    \textit{italique}
+  \end{minipage}
+  \item
+  \begin{minipage}[t]{.46\linewidth}
+    \begin{verbatim}
+      \textbf{\textit{text}}
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+    \textbf{\textit{text}}
+  \end{minipage}
+  \item
+  \begin{minipage}[t]{.46\linewidth}
+    \begin{verbatim}
+      \textsl{slanted}
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+    \textsl{slanted}
+  \end{minipage}
+  \item
+  \begin{minipage}[t]{.46\linewidth}
+    \begin{verbatim}
+      \textsc{Small Caps}
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+    \textsc{Small Caps}
+  \end{minipage}
+\end{itemize}
+
 %
 %===============================================================================
 \end{document}
