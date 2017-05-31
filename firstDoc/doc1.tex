@@ -103,33 +103,30 @@ It is possible to change some parameters like the maximum allowed depth :
 % \setcounter{secnumdepth}{3}%profondeur à laquelle on numérote
 % \setcounter{page}{100}%ùodifie le numéro de page
 
-
-
-
-
-
-\newpage
-\section{Introduction}
-
-% \newenvironement{testEnv}{\bgroup}{\egroup}
-% \begin{testEnv}
-%   \blindtext
-% \end{testEnv}
-
-\subsection{subsection azeazsdqs}
-\blindtext \\
-\subsection{subsection wx:ck,ms}
-\blindtext \\
-
 %===============================================================================
 
 \newpage
-\section{Listes}
+\section{Lists}
 \subsection{listes à puce}
-
-% \renewcommand\labelitemi{X}
-% \renewcommand\labelitemii{\times}
-
+\subsubsection{How to use}
+\begin{verbatim}
+  \begin{itemize}
+    \renewcommand\labelitemi{X}
+    \item chat
+    \begin{enumerate}
+      \item chat 1
+      \item chat 2
+      \item chat 3
+    \end{enumerate}
+    \item chien
+    \item singes
+    \begin{itemize}
+      \item babouin
+      \item chimpanzée
+    \end{itemize}
+  \end{itemize}
+\end{verbatim}
+\subsubsection{Result}
 \begin{itemize}
   \renewcommand\labelitemi{X}
   \item chat
@@ -147,14 +144,25 @@ It is possible to change some parameters like the maximum allowed depth :
 \end{itemize}
 
 \subsection{environement description}
+\subsubsection{How to use}
+\begin{verbatim}
+  \begin{description}
+    \item[chat] boule de poils
+    \item[chien] boule de poils plus grosse
+  \end{description}
+\end{verbatim}
+\subsubsection{Result}
+
 \begin{description}
   \item[chat] boule de poils
-  \item[chien] boule de poils plus grosse \blindtext
+  \item[chien] boule de poils plus grosse
 \end{description}
 
+%===============================================================================
 
 \newpage
 \section{Environement non formaté}
+\subsection{How to use}
 \begin{verbatim}
   \begin{itemize}
     \item chat
@@ -163,14 +171,21 @@ It is possible to change some parameters like the maximum allowed depth :
       \item chat 2
       \item chat 3
     \end{enumerate}
-    \item chien
-    \item singes
-    \begin{itemize}
-      \item babouin
-      \item chimpanzée
-    \end{itemize}
   \end{itemize}
 \end{verbatim}
+\subsection{Result}
+\begin{verbatim}
+  \begin{itemize}
+    \item chat
+    \begin{enumerate}
+      \item chat 1
+      \item chat 2
+      \item chat 3
+    \end{enumerate}
+  \end{itemize}
+\end{verbatim}
+
+%===============================================================================
 
 \newpage
 \section{Extended Headers and footers (fancyhdr)}
@@ -182,37 +197,52 @@ It is possible to change some parameters like the maximum allowed depth :
 \subsection{Simple example}
 This is how to create the simple example you can see on this page.
 \begin{verbatim}
-\pagestyle{fancy}
-\lhead{CoucouL}
-\chead{CoucouCenter}
-\rhead{CoucouR}
-\lfoot{}
-\cfoot{To: Dean A. Smith}
-\rfoot{\thepage}
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\footrulewidth}{0.4pt}
+  \pagestyle{fancy}
+  \lhead{CoucouHL}
+  \chead{CoucouHCenter}
+  \rhead{CoucouHR}
+  \lfoot{coucouFL}
+  \cfoot{coucouFCenter}
+  \rfoot{\thepage}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \renewcommand{\footrulewidth}{0.4pt}
 \end{verbatim}
+
 \pagestyle{fancy}
-\lhead{CoucouL}
-\chead{CoucouCenter}
-\rhead{CoucouR}
-\lfoot{}
-\cfoot{To: Dean A. Smith}
+\lhead{CoucouHL}
+\chead{CoucouHCenter}
+\rhead{CoucouHR}
+\lfoot{coucouFL}
+\cfoot{coucouFCenter}
 \rfoot{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
+
 \subsection{Redefining plain style}
 \begin{verbatim}
-\fancypagestyle{plain}{%
-\fancyhf{} % clear all header and footer fields
-\fancyfoot[C]{\textbf{\thepage}} % except the center
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}}
+  \fancypagestyle{plain}{%
+  \fancyhf{} % clear all header and footer fields
+  \fancyfoot[C]{\textbf{\thepage}} % except the center
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}}
 \end{verbatim}
+
 % \setlength\oddsidemargin{-5000000sp} décaler la marge
+
+%===============================================================================
+
 \newpage
-\section{layout}
+\section{Layout}
+\subsection{Usepackage}
+\begin{verbatim}
+  \usepackage[reals]{layout}
+\end{verbatim}
+\subsection{How to use}
+\begin{verbatim}
+  \layout
+\end{verbatim}
+\subsection{Results}
 \layout
 
 %===============================================================================
@@ -331,6 +361,111 @@ No needs
   \end{minipage}
 \end{itemize}
 
-%
+\subsection{Caractères spéciaux}
+\begin{itemize}
+  \renewcommand\labelitemi{}
+  \item
+  \begin{minipage}[t]{.60\linewidth}
+    Command :
+    \\
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+     Result :
+     \\
+  \end{minipage} \hfill
+  \item
+  \begin{minipage}[t]{.60\linewidth}
+    \begin{verbatim}
+      \verb|\| or \textbackslash
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+     \verb|\|
+  \end{minipage}
+  \item
+  \begin{minipage}[t]{.60\linewidth}
+    \begin{verbatim}
+      \verb|{| or \{
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+     \verb|{|
+  \end{minipage}
+  \item
+  \begin{minipage}[t]{.60\linewidth}
+    \begin{verbatim}
+      \verb|}|
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+     \verb|}|
+  \end{minipage}
+  \item
+  \begin{minipage}[t]{.60\linewidth}
+    \begin{verbatim}
+      \verb|$|
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+     \verb|$|
+  \end{minipage}
+  \item
+  \begin{minipage}[t]{.60\linewidth}
+    \begin{verbatim}
+      \verb|^|
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+     \verb|^|
+  \end{minipage}
+  \item
+  \begin{minipage}[t]{.60\linewidth}
+    \begin{verbatim}
+      \verb|%|
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+     \verb|%|
+  \end{minipage}
+  \item
+  \begin{minipage}[t]{.60\linewidth}
+    \begin{verbatim}
+      \verb|_|
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+     \verb|_|
+  \end{minipage}
+  \item
+  \begin{minipage}[t]{.60\linewidth}
+    \begin{verbatim}
+      \verb|-|
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+     \verb|-|
+  \end{minipage}
+  \item
+  \begin{minipage}[t]{.60\linewidth}
+    \begin{verbatim}
+      \verb|&|
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+     \verb|&|
+  \end{minipage}
+  \item
+  \begin{minipage}[t]{.60\linewidth}
+    \begin{verbatim}
+      \verb|~|
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+     \verb|~|
+  \end{minipage}
+\end{itemize}
+
+
+
 %===============================================================================
 \end{document}
