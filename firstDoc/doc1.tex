@@ -6,12 +6,16 @@
 \usepackage{blindtext} %génération de Lorem Ipsum
 \usepackage[reals]{layout} % permet l'affichage du layout d'une page via \layout
 \usepackage{fancyhdr}%extended Headers and footers
+\usepackage{multicol}
 \begin{document}
-\title{Mon premier doc \LaTeX héhé}
-\author{virgile\thanks{coucou1}\\Loria \and thomas\thanks{coucou2}\\ENSEM BOUH}% \and permet de séparer en colonnes
+\title{Les bases du \LaTeX}
+\author{Virgile Daugé\thanks{Remerciements sous forme de houblon transformé acceptées}\\Loria \and thomas\thanks{coucou2}\\ENSEM BOUH}% \and permet de séparer en colonnes
 \date{\today}
 
 \maketitle
+\begin{abstract}
+  The goal of this document is to present \LaTeX basics, by showing both commands and results for common uses/packages.
+\end{abstract}
 \tableofcontents
 %=====================================================================================
 %
@@ -30,7 +34,10 @@
 % \begin{verbatim}
 % \end{verbatim}
 % \subsection{Results}
+%
 %======================================================================================
+
+
 \newpage
 \section{Encoding and language selection}
 \subsection{Usepackage}
@@ -43,6 +50,9 @@
 Nothing special to do. Just use your choosed language as usual.
 \subsection{Results}
 é è ù à ô û ü...
+
+%===============================================================================
+
 \newpage
 \section{Abtract}
 \subsection{Usepackage}
@@ -71,13 +81,34 @@ No needs for article class.
 \blindtext
 \end{abstract}
 
+%===============================================================================
+
 \newpage
 \section{Table of content}
 \subsection{Usepackage}
 No needs for article class.
+\subsection{How to use}
+Basic :
+\begin{verbatim}
+  \tableofcontents
+\end{verbatim}
+It is possible to change some parameters like the maximum allowed depth :
+\begin{verbatim}
+  \setcounter{tocdepth}{4} % set TOC depth to 4
+\end{verbatim}
+\subsection{Result}
+  \tableofcontents
+
 % \setcounter{tocdepth}{4} %profondeur de la table des matières
 % \setcounter{secnumdepth}{3}%profondeur à laquelle on numérote
 % \setcounter{page}{100}%ùodifie le numéro de page
+
+
+
+
+
+
+\newpage
 \section{Introduction}
 
 % \newenvironement{testEnv}{\bgroup}{\egroup}
@@ -90,14 +121,17 @@ No needs for article class.
 \subsection{subsection wx:ck,ms}
 \blindtext \\
 
+%===============================================================================
+
 \newpage
 \section{Listes}
 \subsection{listes à puce}
 
-\renewcommand\labelitemi{X}
+% \renewcommand\labelitemi{X}
 % \renewcommand\labelitemii{\times}
 
 \begin{itemize}
+  \renewcommand\labelitemi{X}
   \item chat
   \begin{enumerate}
     \item chat 1
@@ -180,4 +214,73 @@ This is how to create the simple example you can see on this page.
 \newpage
 \section{layout}
 \layout
+
+%===============================================================================
+
+\newpage
+\section{Polices}
+\subsection{Default}
+No needs
+\subsection{How to change sizes}
+\begin{itemize}
+  \renewcommand\labelitemi{}
+  \item
+  \begin{minipage}[t]{.46\linewidth}
+    \begin{verbatim}
+      {\tiny text}
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+    {\tiny text}
+  \end{minipage}
+  \item
+  \begin{minipage}[t]{.46\linewidth}
+    \begin{verbatim}
+      {\normalsize text}
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+    {\normalsize text}
+  \end{minipage}
+  \item
+  \begin{minipage}[t]{.46\linewidth}
+    \begin{verbatim}
+      {\large text}
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+    {\large text}
+  \end{minipage}
+  \item
+  \begin{minipage}[t]{.46\linewidth}
+    \begin{verbatim}
+      {\Large text}
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+    {\Large text}
+  \end{minipage}
+  \item
+  \begin{minipage}[t]{.46\linewidth}
+    \begin{verbatim}
+      {\LARGE text}
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+    {\LARGE text}
+  \end{minipage}
+  \item
+  \begin{minipage}[t]{.46\linewidth}
+    \begin{verbatim}
+      {\huge text}
+    \end{verbatim}
+  \end{minipage} \hfill
+  \begin{minipage}[t]{.46\linewidth}
+    {\huge text}
+  \end{minipage}
+\end{itemize}
+
+\subsection{Bold and italic}
+%
+%===============================================================================
 \end{document}
